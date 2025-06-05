@@ -1,17 +1,13 @@
-# NFT Art Marketplace
+# Sample Hardhat Project
 
-## Table of Contents
-- Blockchain-based Social Proof System
-- Project Description
-- Project Vision
-- Future Scope
-- Key Features
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
 
-## Blockchain-based Social Proof System
-The platform enables artists and collectors to build a verified reputation system using blockchain technology. Each NFT transaction is recorded on-chain, ensuring authenticity and provenance, fostering trust between buyers and sellers.
+Try running some of the following tasks:
 
-## Project Description
-NFT Art Marketplace is a decentralized platform that allows users to buy, sell, and auction digital art as NFTs. It ensures secure transactions, transparent ownership records, and seamless interactions between artists and collectors.
-
-## Project Vision
-The vision of this project is to empower digital artists and collectors by providing a decentralized, trustless, and transparent marketplace where NFT ownership and transactions
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat ignition deploy ./ignition/modules/Lock.js
+```
