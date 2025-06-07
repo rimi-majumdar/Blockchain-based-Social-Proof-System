@@ -1,7 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
-contract NFTArtMarketplace {
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract NFTArtMarketplace is ERC721URIStorage, Ownable {
     struct NFT {
         uint id;
         string name;
@@ -10,11 +13,10 @@ contract NFTArtMarketplace {
         uint price;
         bool forSale;
     }
-    
+
     uint public nextId;
-    uint public totalMinted;
     address public marketplaceOwner;
-    
+
     mapping(uint => NFT) public nfts;
     mapping(address => uint[]) private ownerToNFTs;
 
@@ -25,7 +27,7 @@ contract NFTArtMarketplace {
     event MetadataUpdated(uint indexed id, string newMetadata);
     event Withdrawal(address indexed to, uint amount);
 
-    modifier onlyOwner(uint id) {
+    modifier onlyNFTOwner(uint id) {
         require(nfts[id].owner == msg.sender, "Not the NFT owner");
         _;
     }
@@ -35,30 +37,37 @@ contract NFTArtMarketplace {
         _;
     }
 
-    constructor() {
+    constructor() ERC721("NFTArtMarketplace", "NAM") Ownable() {
         marketplaceOwner = msg.sender;
     }
-    
+
     function createNFT(string memory name, string memory metadata) public {
-        nfts[nextId] = NFT(nextId, name, metadata, msg.sender, 0, false);
-        ownerToNFTs[msg.sender].push(nextId);
-        emit NFTCreated(nextId, name, msg.sender);
+        uint tokenId = nextId;
+
+        // Mint and set token URI
+        _safeMint(msg.sender, tokenId);
+        _setTokenURI(tokenId, metadata);
+
+        nfts[tokenId] = NFT(tokenId, name, metadata, msg.sender, 0, false);
+        ownerToNFTs[msg.sender].push(tokenId);
+
+        emit NFTCreated(tokenId, name, msg.sender);
+
         nextId++;
-        totalMinted++;
     }
-    
-    function listNFT(uint id, uint price) public onlyOwner(id) {
+
+    function listNFT(uint id, uint price) public onlyNFTOwner(id) {
         require(price > 0, "Price must be greater than zero");
         nfts[id].price = price;
         nfts[id].forSale = true;
         emit NFTListed(id, price);
     }
-    
-    function delistNFT(uint id) public onlyOwner(id) {
+
+    function delistNFT(uint id) public onlyNFTOwner(id) {
         nfts[id].forSale = false;
         emit NFTDelisted(id);
     }
-    
+
     function buyNFT(uint id) public payable {
         require(id < nextId, "Invalid NFT id");
         NFT storage nft = nfts[id];
@@ -67,24 +76,23 @@ contract NFTArtMarketplace {
 
         address previousOwner = nft.owner;
 
-        // Transfer ownership
+        // Transfer ownership in ERC721 and update marketplace data
+        _transfer(previousOwner, msg.sender, id);
+
         nft.owner = msg.sender;
         nft.forSale = false;
 
-        // Remove from previous owner mapping
         _removeNFTFromOwner(previousOwner, id);
-
-        // Add to new owner mapping
         ownerToNFTs[msg.sender].push(id);
 
-        // Pay previous owner
         payable(previousOwner).transfer(msg.value);
 
         emit NFTSold(id, msg.sender, msg.value);
     }
 
-    function updateMetadata(uint id, string memory newMetadata) public onlyOwner(id) {
+    function updateMetadata(uint id, string memory newMetadata) public onlyNFTOwner(id) {
         nfts[id].metadata = newMetadata;
+        _setTokenURI(id, newMetadata);
         emit MetadataUpdated(id, newMetadata);
     }
 
@@ -95,17 +103,17 @@ contract NFTArtMarketplace {
         emit Withdrawal(marketplaceOwner, balance);
     }
 
-    // View function to get NFTs owned by an address
-    function getNFTsByOwner(address owner) public view returns (NFT[] memory) {
-        uint[] memory ids = ownerToNFTs[owner];
-        NFT[] memory result = new NFT[](ids.length);
-        for (uint i = 0; i < ids.length; i++) {
-            result[i] = nfts[ids[i]];
-        }
-        return result;
+    // Return only NFT IDs owned by an address (ABI-safe)
+    function getNFTsByOwner(address owner) public view returns (uint[] memory) {
+        return ownerToNFTs[owner];
     }
 
-    // Internal helper to remove NFT from previous owner's list
+    // Return full NFT struct for given tokenId
+    function getNFT(uint id) public view returns (NFT memory) {
+        require(id < nextId, "Invalid NFT id");
+        return nfts[id];
+    }
+
     function _removeNFTFromOwner(address owner, uint id) internal {
         uint[] storage nftList = ownerToNFTs[owner];
         for (uint i = 0; i < nftList.length; i++) {
