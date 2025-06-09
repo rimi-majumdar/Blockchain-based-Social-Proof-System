@@ -80,20 +80,24 @@ https://github.com/user-attachments/assets/5cae4fd1-fe17-4e99-bff8-544d4f056a5a
 
 1. **Mint NFT Page**
 
+![WhatsApp Image 2025-06-09 at 22 12 25_74639c3c](https://github.com/user-attachments/assets/e433d175-0787-4e44-942a-36706df1d019)
 
-![WhatsApp Image 2025-06-09 at 22 12 08_673d1bee](https://github.com/user-attachments/assets/6877cd55-edf0-43a9-a86b-7cc792a960d1)
 
 2. **Marketplace Listing**
 
-![WhatsApp Image 2025-06-09 at 22 12 25_74639c3c](https://github.com/user-attachments/assets/e433d175-0787-4e44-942a-36706df1d019)
+ ![WhatsApp Image 2025-06-09 at 22 12 08_673d1bee](https://github.com/user-attachments/assets/6877cd55-edf0-43a9-a86b-7cc792a960d1)
+
 
 3. **NFT Detail & Purchase**
+   
 
 ![WhatsApp Image 2025-06-09 at 22 12 34_fd478d97](https://github.com/user-attachments/assets/e0471acc-8015-4cbf-a2d2-c3117dbbb629)
 
 ![WhatsApp Image 2025-06-09 at 22 12 44_9f77d40d](https://github.com/user-attachments/assets/096ddc62-d17f-45c0-abc1-01d0cd83284d)
 
+
 4. **User Profile & NFT Collection**
+   
 
 ![WhatsApp Image 2025-06-09 at 22 12 53_e02e179a](https://github.com/user-attachments/assets/371d3b6e-9908-4413-a8c4-751e2a1b7c89)
 
