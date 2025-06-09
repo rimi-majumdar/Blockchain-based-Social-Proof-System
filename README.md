@@ -70,28 +70,37 @@ The current NFT Art Marketplace lays a solid foundation with core minting and tr
 
 Demonstrating core marketplace workflows — minting, listing, buying, and metadata updates.
 
-[![NFT Art Marketplace Demo](https://github.com/user-attachments/assets/42df5e1b-ba46-4863-bceb-17ec7546deeb)
 
----
+https://github.com/user-attachments/assets/5cae4fd1-fe17-4e99-bff8-544d4f056a5a
 
+
+   
 ### **Screenshots**
 
+
 1. **Mint NFT Page**
-   ![WhatsApp Image 2025-06-09 at 22 12 08_673d1bee](https://github.com/user-attachments/assets/6877cd55-edf0-43a9-a86b-7cc792a960d1)
-   Effortlessly create your unique digital art NFT with metadata and instantly add it to the marketplace.
 
-2. **Marketplace Listing**
-   ![Marketplace](https://github.com/user-attachments/assets/e433d175-0787-4e44-942a-36706df1d019)
-   Browse available NFTs with detailed info including ownership, price, and sale status.
 
-3. **NFT Detail & Purchase**
-   ![NFT Detail](https://github.com/user-attachments/assets/e0471acc-8015-4cbf-a2d2-c3117dbbb629)
-   ![WhatsApp Image 2025-06-09 at 22 12 44_9f77d40d](https://github.com/user-attachments/assets/096ddc62-d17f-45c0-abc1-01d0cd83284d)
-   View detailed metadata and securely purchase NFTs with a single click.
+![WhatsApp Image 2025-06-09 at 22 12 08_673d1bee](https://github.com/user-attachments/assets/6877cd55-edf0-43a9-a86b-7cc792a960d1)
+
+3. **Marketplace Listing**
+
+![WhatsApp Image 2025-06-09 at 22 12 25_74639c3c](https://github.com/user-attachments/assets/e433d175-0787-4e44-942a-36706df1d019)
+
+4. **NFT Detail & Purchase**
+
+![WhatsApp Image 2025-06-09 at 22 12 34_fd478d97](https://github.com/user-attachments/assets/e0471acc-8015-4cbf-a2d2-c3117dbbb629)
+
+![WhatsApp Image 2025-06-09 at 22 12 44_9f77d40d](https://github.com/user-attachments/assets/096ddc62-d17f-45c0-abc1-01d0cd83284d)
 
 5. **User Profile & NFT Collection**
-   ![User Profile](https://github.com/user-attachments/assets/371d3b6e-9908-4413-a8c4-751e2a1b7c89)
-   Track all NFTs owned by a user, with full details and ownership history.
+
+![WhatsApp Image 2025-06-09 at 22 12 53_e02e179a](https://github.com/user-attachments/assets/371d3b6e-9908-4413-a8c4-751e2a1b7c89)
+
+
+
+
+
 
 ---
 
