@@ -44,7 +44,6 @@ contract NFTArtMarketplace is ERC721URIStorage, Ownable {
     function createNFT(string memory name, string memory metadata) public {
         uint tokenId = nextId;
 
-        // Mint and set token URI
         _safeMint(msg.sender, tokenId);
         _setTokenURI(tokenId, metadata);
 
@@ -76,7 +75,6 @@ contract NFTArtMarketplace is ERC721URIStorage, Ownable {
 
         address previousOwner = nft.owner;
 
-        // Transfer ownership in ERC721 and update marketplace data
         _transfer(previousOwner, msg.sender, id);
 
         nft.owner = msg.sender;
@@ -103,12 +101,25 @@ contract NFTArtMarketplace is ERC721URIStorage, Ownable {
         emit Withdrawal(marketplaceOwner, balance);
     }
 
-    // Return only NFT IDs owned by an address (ABI-safe)
-    function getNFTsByOwner(address owner) public view returns (uint[] memory) {
-        return ownerToNFTs[owner];
+    // ✅ Return full NFT objects owned by a user
+    function getNFTsByOwner(address owner) public view returns (NFT[] memory) {
+        uint[] memory ownedIds = ownerToNFTs[owner];
+        NFT[] memory result = new NFT[](ownedIds.length);
+        for (uint i = 0; i < ownedIds.length; i++) {
+            result[i] = nfts[ownedIds[i]];
+        }
+        return result;
     }
 
-    // Return full NFT struct for given tokenId
+    // ✅ Return all NFTs created (used in marketplace)
+    function getAllNFTs() public view returns (NFT[] memory) {
+        NFT[] memory result = new NFT[](nextId);
+        for (uint i = 0; i < nextId; i++) {
+            result[i] = nfts[i];
+        }
+        return result;
+    }
+
     function getNFT(uint id) public view returns (NFT memory) {
         require(id < nextId, "Invalid NFT id");
         return nfts[id];
