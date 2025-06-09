@@ -1,0 +1,179 @@
+/* Reset some basic elements */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #121212; /* Dark background */
+  color: #ffffff;       /* White text */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background: #1e1e1e; /* Darker container background */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #e0e0e0;
+}
+
+a {
+  color: #4da6ff; /* Blue links */
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a:hover,
+a:focus {
+  color: #82cfff;
+  text-decoration: underline;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: white;
+  border: 1.8px solid #555;
+  border-radius: 8px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #4da6ff;
+  box-shadow: 0 0 6px rgba(77, 166, 255, 0.4);
+}
+
+button {
+  background-color: #0047ab; /* Dark blue button */
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  user-select: none;
+}
+
+button:hover:not(:disabled) {
+  background-color: #00337a;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #3d5a80;
+  cursor: not-allowed;
+  transform: none;
+}
+
+section {
+  margin-top: 2.5rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background: #1c1c1c;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.04);
+  padding: 1.3rem 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: box-shadow 0.3s ease;
+}
+
+li:hover {
+  box-shadow: 0 5px 18px rgba(255, 255, 255, 0.08);
+}
+
+li p {
+  margin: 0.3rem 0;
+  color: #e0e0e0;
+}
+
+.red-text {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+input.list-price-input {
+  width: 140px;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  background-color: #2a2a2a;
+  color: white;
+  border: 1.5px solid #555;
+  border-radius: 6px;
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 1rem 1.2rem;
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .flex-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input.list-price-input {
+    width: 100%;
+  }
+}
