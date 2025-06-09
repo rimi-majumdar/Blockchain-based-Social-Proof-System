@@ -10,12 +10,20 @@ Creating new NFT
 
 Minting NFT
 
-DEMO VIDEO![WhatsApp Image 2025-06-09 at 22 12 34_8486489b](https://github.com/user-attachments/assets/42df5e1b-ba46-4863-bceb-17ec7546deeb)
+![WhatsApp Image 2025-06-09 at 22 12 34_fd478d97](https://github.com/user-attachments/assets/e0471acc-8015-4cbf-a2d2-c3117dbbb629)
+
+![WhatsApp Image 2025-06-09 at 22 12 44_9f77d40d](https://github.com/user-attachments/assets/096ddc62-d17f-45c0-abc1-01d0cd83284d)
 
 Overview
 
-![WhatsApp Image 2025![WhatsApp Image 2025-06-09 at 22 12 53_f85bedb0](https://github.com/user-attachments/assets/fb416fbc-3028-42ed-a2d6-5f4181fadaa6)
--06-09 at 22 12 44_d7c3f6a2](https://github.com/user-attachments/assets/4d9daf89-c933-430b-8d47-313f4136b913)
+![WhatsApp Image 2025-06-09 at 22 12 53_e02e179a](https://github.com/user-attachments/assets/371d3b6e-9908-4413-a8c4-751e2a1b7c89)
+
+
+DEMO VIDEO!
+
+[WhatsApp Image 2025-06-09 at 22 12 34_8486489b](https://github.com/user-attachments/assets/42df5e1b-ba46-4863-bceb-17ec7546deeb)
+
+
 
 
 
